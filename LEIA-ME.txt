@@ -1,0 +1,123 @@
+═══════════════════════════════════════════════════════════════════════
+  GRUPO ESPÍRITA SEMENTES DE HUMILDADE - GUIA RÁPIDO
+═══════════════════════════════════════════════════════════════════════
+
+📌 PASSO A PASSO PARA RODAR O SITE NA SUA MÁQUINA
+
+1️⃣ BAIXAR O PROJETO DO FIGMA MAKE
+   
+   Infelizmente o Figma Make não tem um botão direto de download.
+   Você tem 3 opções:
+
+   OPÇÃO A - Copiar Manualmente (mais trabalhoso):
+   • Abra cada arquivo no Figma Make
+   • Copie o conteúdo
+   • Crie os mesmos arquivos no seu computador
+   • Cole o conteúdo
+
+   OPÇÃO B - Verificar Menu de Exportação:
+   • Procure por um menu "File", "Export" ou ícone ⋮ (3 pontos)
+   • Clique em "Download" ou "Export code"
+   • Salve o arquivo .zip
+   • Extraia em uma pasta no seu computador
+
+   OPÇÃO C - Usar GitHub (RECOMENDADO):
+   • No Figma Make, procure integração com GitHub
+   • Conecte sua conta GitHub
+   • Faça "push" do código para um repositório
+   • No seu computador, abra o terminal e digite:
+     git clone [URL_DO_SEU_REPOSITORIO]
+
+
+2️⃣ INSTALAR O NODE.JS
+
+   • Acesse: https://nodejs.org/pt-br
+   • Baixe e instale a versão LTS (recomendada)
+   • Reinicie o computador após a instalação
+
+
+3️⃣ ABRIR O TERMINAL NA PASTA DO PROJETO
+
+   WINDOWS:
+   • Navegue até a pasta do projeto no Explorador de Arquivos
+   • Clique na barra de endereço
+   • Digite "cmd" e pressione Enter
+
+   MAC/LINUX:
+   • Abra o Terminal
+   • Digite: cd /caminho/para/a/pasta/do/projeto
+
+
+4️⃣ INSTALAR AS DEPENDÊNCIAS
+
+   No terminal, digite:
+   
+   npm install
+
+   ⏳ Aguarde... pode demorar alguns minutos
+
+
+5️⃣ RODAR O SITE LOCALMENTE
+
+   No terminal, digite:
+   
+   npm run dev
+
+   ✅ Abra seu navegador e acesse: http://localhost:5173
+
+
+6️⃣ CRIAR VERSÃO PARA PUBLICAÇÃO
+
+   Quando quiser publicar o site, digite:
+   
+   npm run build
+
+   📦 Isso criará uma pasta "dist" com o site pronto para hospedagem
+
+
+═══════════════════════════════════════════════════════════════════════
+
+🌐 ONDE HOSPEDAR O SITE (OPÇÕES GRATUITAS)
+
+1. VERCEL (Mais Fácil - Recomendado)
+   • Instale: npm install -g vercel
+   • Na pasta do projeto: vercel
+   • Siga as instruções
+
+2. NETLIFY (Arrastar e Soltar)
+   • Acesse: www.netlify.com
+   • Crie conta gratuita
+   • Arraste a pasta "dist" para o site
+
+3. GITHUB PAGES (Se você usa GitHub)
+   • Faça push da pasta dist para o repositório
+   • Ative GitHub Pages nas configurações
+
+═══════════════════════════════════════════════════════════════════════
+
+❓ PROBLEMAS COMUNS
+
+ERRO: "npm: command not found"
+→ Você precisa instalar o Node.js primeiro
+
+ERRO: "Port 5173 is already in use"
+→ Feche outros programas e tente novamente
+→ Ou use: npm run dev -- --port 3000
+
+PÁGINA EM BRANCO depois de publicar
+→ Verifique se todos os arquivos da pasta "dist" foram enviados
+
+═══════════════════════════════════════════════════════════════════════
+
+📖 DOCUMENTAÇÃO COMPLETA
+
+Leia o arquivo "GUIA_INSTALACAO.md" para instruções detalhadas.
+
+═══════════════════════════════════════════════════════════════════════
+
+📞 CONTATO DO GRUPO
+
+Rua Goiás, 253 - Nova Aldeinha
+Barueri - SP, CEP 06440-170
+
+═══════════════════════════════════════════════════════════════════════

@@ -1,0 +1,155 @@
+═══════════════════════════════════════════════════════════════════════
+  🚀 GUIA RÁPIDO: PUBLICAR NO HOSTGATOR (Windows)
+═══════════════════════════════════════════════════════════════════════
+
+📋 CHECKLIST RÁPIDO
+
+PARTE 1: NO SEU COMPUTADOR (WINDOWS)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. ✅ Instalar Node.js
+   → https://nodejs.org/pt-br
+   → Baixar e instalar
+   → REINICIAR O COMPUTADOR
+
+2. ✅ Baixar o projeto do Figma Make
+   → Procurar botão "Export" ou "Download"
+   → OU copiar arquivos manualmente
+
+3. ✅ Abrir Prompt de Comando na pasta
+   → Explorador de Arquivos
+   → Clicar na barra de endereço
+   → Digitar: cmd
+   → Enter
+
+4. ✅ Instalar dependências
+   Digitar: npm install
+   (Aguardar 2-5 minutos)
+
+5. ✅ Criar versão de produção
+   Digitar: npm run build
+   (Aguardar 1-2 minutos)
+
+6. ✅ Localizar pasta "dist"
+   → Vai estar dentro da pasta do projeto
+   → Contém todos os arquivos do site
+
+
+PARTE 2: NO HOSTGATOR (cPanel)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. ✅ Acessar cPanel
+   → https://seu-dominio.com.br:2083
+   → Fazer login
+
+2. ✅ Abrir Gerenciador de Arquivos
+   → Procurar "File Manager" ou "Gerenciador de Arquivos"
+   → Clicar
+
+3. ✅ Entrar em public_html
+   → Duplo clique na pasta "public_html"
+
+4. ✅ Limpar arquivos antigos (opcional)
+   → Selecionar todos
+   → Delete
+   → NÃO DELETE .htaccess se existir
+
+5. ✅ Fazer Upload
+   
+   MÉTODO 1 - Direto:
+   → Clicar em "Upload"
+   → Selecionar TODOS os arquivos de dentro da pasta "dist"
+   → Aguardar upload
+
+   MÉTODO 2 - ZIP (Recomendado):
+   → No Windows: Compactar conteúdo da pasta "dist"
+   → Upload do arquivo .zip
+   → Botão direito no .zip → "Extract"
+   → Deletar o .zip depois
+
+6. ✅ Criar arquivo .htaccess
+   → Clicar em "+ File"
+   → Nome: .htaccess
+   → Editar e colar:
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+
+   → Salvar
+
+7. ✅ Testar o site
+   → Abrir navegador
+   → Acessar: http://seu-dominio.com.br
+   → Pronto! 🎉
+
+
+═══════════════════════════════════════════════════════════════════════
+
+⚠️ PROBLEMAS COMUNS NO WINDOWS
+
+PROBLEMA: "npm não é reconhecido"
+SOLUÇÃO: 
+  → Node.js não está instalado
+  → Reinstalar e REINICIAR o computador
+
+PROBLEMA: npm install dá erro
+SOLUÇÃO: 
+  → Executar como Administrador
+  → Desativar antivírus temporariamente
+  → Verificar conexão com internet
+
+PROBLEMA: Não acho a pasta "dist"
+SOLUÇÃO:
+  → Executar: npm run build
+  → Aguardar terminar
+  → Atualizar o Explorador de Arquivos (F5)
+
+PROBLEMA: Site mostra página em branco
+SOLUÇÃO:
+  → Verificar se index.html está em public_html
+  → Verificar se pasta "assets" está junto
+  → Limpar cache do navegador (Ctrl+Shift+Delete)
+
+═══════════════════════════════════════════════════════════════════════
+
+📞 SUPORTE
+
+HostGator Brasil:
+  → Telefone: 0800 591 2600
+  → Chat: https://www.hostgator.com.br/
+
+Node.js não instala?
+  → Verificar se Windows é 32-bit ou 64-bit
+  → Baixar versão correta
+
+═══════════════════════════════════════════════════════════════════════
+
+🎯 ESTRUTURA DOS ARQUIVOS NO HOSTGATOR
+
+public_html/
+├── index.html          ← Arquivo principal
+├── assets/             ← Pasta com JS e CSS
+│   ├── index-abc123.js
+│   └── index-xyz789.css
+├── .htaccess           ← Criar manualmente
+└── (outros arquivos)
+
+═══════════════════════════════════════════════════════════════════════
+
+💾 ATUALIZAÇÕES FUTURAS
+
+Quando quiser atualizar o site:
+
+1. Fazer mudanças no código
+2. Executar: npm run build
+3. Deletar arquivos antigos no cPanel
+4. Fazer upload dos novos arquivos da pasta "dist"
+5. Manter o arquivo .htaccess
+
+═══════════════════════════════════════════════════════════════════════

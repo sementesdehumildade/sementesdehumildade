@@ -1,0 +1,227 @@
+╔═══════════════════════════════════════════════════════════════════╗
+║                                                                   ║
+║   ✅ CHECKLIST: PUBLICAR SITE NO HOSTGATOR (cPanel)              ║
+║   Grupo Espírita Sementes de Humildade                           ║
+║                                                                   ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+📋 IMPRIMA ESTA PÁGINA E MARQUE CADA ETAPA CONFORME COMPLETAR
+
+
+┌───────────────────────────────────────────────────────────────────┐
+│ ETAPA 1: PREPARAÇÃO                                               │
+└───────────────────────────────────────────────────────────────────┘
+
+[ ] Tenho os arquivos do site prontos no computador
+[ ] Arquivos estão em uma pasta organizada
+[ ] Tenho login e senha do cPanel em mãos
+
+
+┌───────────────────────────────────────────────────────────────────┐
+│ ETAPA 2: ACESSAR cPANEL                                           │
+└───────────────────────────────────────────────────────────────────┘
+
+[ ] Acessei: https://meudominio.com.br:2083
+    (substituir "meudominio" pelo seu domínio real)
+
+    OU
+
+[ ] Acessei: https://cpanel.hostgator.com.br
+
+[ ] Fiz login com sucesso
+[ ] Vejo a tela inicial do cPanel (cheia de ícones)
+
+
+┌───────────────────────────────────────────────────────────────────┐
+│ ETAPA 3: ABRIR GERENCIADOR DE ARQUIVOS                            │
+└───────────────────────────────────────────────────────────────────┘
+
+[ ] Encontrei a seção "ARQUIVOS" no cPanel
+[ ] Cliquei em "Gerenciador de Arquivos" (File Manager)
+[ ] Gerenciador de Arquivos abriu em nova aba/janela
+
+
+┌───────────────────────────────────────────────────────────────────┐
+│ ETAPA 4: NAVEGAR ATÉ A PASTA PÚBLICA                              │
+└───────────────────────────────────────────────────────────────────┘
+
+[ ] Dei duplo clique na pasta "public_html"
+[ ] Estou DENTRO da pasta public_html agora
+[ ] Vejo o conteúdo da pasta (pode estar vazio)
+
+
+┌───────────────────────────────────────────────────────────────────┐
+│ ETAPA 5: LIMPAR ARQUIVOS ANTIGOS (se houver)                      │
+└───────────────────────────────────────────────────────────────────┘
+
+[ ] Verifiquei se há arquivos antigos
+[ ] Selecionei arquivos antigos (MENOS .htaccess e cgi-bin)
+[ ] Cliquei em "Delete" e confirmei
+[ ] Pasta public_html está vazia (ou só com .htaccess)
+
+
+┌───────────────────────────────────────────────────────────────────┐
+│ ETAPA 6: PREPARAR ARQUIVOS PARA UPLOAD                            │
+└───────────────────────────────────────────────────────────────────┘
+
+NO MEU COMPUTADOR:
+
+[ ] Abri a pasta com os arquivos do site
+[ ] Entrei DENTRO da pasta (vejo index.html e pasta assets)
+[ ] Selecionei TODOS os arquivos (Ctrl+A)
+[ ] Botão direito → "Enviar para" → "Pasta compactada"
+[ ] Arquivo .zip foi criado (ex: site.zip)
+
+
+┌───────────────────────────────────────────────────────────────────┐
+│ ETAPA 7: FAZER UPLOAD DO ARQUIVO ZIP                              │
+└───────────────────────────────────────────────────────────────────┘
+
+NO cPANEL (Gerenciador de Arquivos):
+
+[ ] Estou dentro de "public_html"
+[ ] Cliquei no botão "Upload" (topo da página)
+[ ] Nova aba de upload abriu
+[ ] Cliquei em "Selecionar Arquivo"
+[ ] Escolhi o arquivo .zip que criei
+[ ] Upload chegou a 100% (barra verde completa)
+[ ] Fechei a aba de upload
+[ ] Voltei para o Gerenciador de Arquivos
+
+
+┌───────────────────────────────────────────────────────────────────┐
+│ ETAPA 8: EXTRAIR O ARQUIVO ZIP                                    │
+└───────────────────────────────────────────────────────────────────┘
+
+[ ] Vejo o arquivo .zip listado em public_html
+[ ] Cliquei com botão DIREITO no arquivo .zip
+[ ] Escolhi "Extract" ou "Extrair"
+[ ] Cliquei em "Extract Files" ou "Extrair Arquivos"
+[ ] Mensagem de sucesso apareceu
+[ ] Agora vejo: index.html e pasta assets em public_html
+[ ] Deletei o arquivo .zip (não precisa mais dele)
+
+
+┌───────────────────────────────────────────────────────────────────┐
+│ ETAPA 9: VERIFICAR ESTRUTURA DE ARQUIVOS                          │
+└───────────────────────────────────────────────────────────────────┘
+
+DENTRO DE public_html DEVO VER:
+
+[ ] ✅ index.html (arquivo principal)
+[ ] ✅ assets/ (pasta com CSS, JS, imagens)
+[ ] ✅ Outros arquivos do site (se houver)
+
+⚠️  SE NÃO VEJO index.html: Algo deu errado, refazer upload
+
+
+┌───────────────────────────────────────────────────────────────────┐
+│ ETAPA 10: CRIAR ARQUIVO .htaccess                                 │
+└───────────────────────────────────────────────────────────────────┘
+
+[ ] Cliquei em "+ File" ou "Novo Arquivo"
+[ ] Digitei o nome: .htaccess (com ponto na frente!)
+[ ] Cliquei em "Create New File"
+[ ] Arquivo .htaccess apareceu na lista
+[ ] Botão direito no .htaccess → "Edit"
+[ ] Editor de texto abriu
+[ ] Copiei o código do PASSO 7 do guia completo
+[ ] Colei no editor
+[ ] Cliquei em "Save Changes"
+[ ] Fechei o editor
+
+
+┌───────────────────────────────────────────────────────────────────┐
+│ ETAPA 11: CONFIGURAR PERMISSÕES                                   │
+└───────────────────────────────────────────────────────────────────┘
+
+PARA O ARQUIVO index.html:
+
+[ ] Botão direito → "Permissions"
+[ ] Configurei para: 644
+   Owner: Read + Write
+   Group: Read
+   World: Read
+[ ] Cliquei em "Change Permissions"
+
+PARA A PASTA assets:
+
+[ ] Botão direito → "Permissions"  
+[ ] Configurei para: 755
+   Owner: Read + Write + Execute
+   Group: Read + Execute
+   World: Read + Execute
+[ ] Marquei "Recurse into subdirectories"
+[ ] Cliquei em "Change Permissions"
+
+
+┌───────────────────────────────────────────────────────────────────┐
+│ ETAPA 12: TESTAR O SITE                                           │
+└───────────────────────────────────────────────────────────────────┘
+
+[ ] Abri nova aba no navegador
+[ ] Digitei: http://meudominio.com.br
+[ ] ✅ SITE CARREGOU! Vejo a página do Grupo Espírita!
+[ ] Testei clicar nos links do menu
+[ ] Links funcionam corretamente
+[ ] Testei em outro dispositivo (celular)
+
+
+┌───────────────────────────────────────────────────────────────────┐
+│ ETAPA 13: ATIVAR SSL (HTTPS) - OPCIONAL MAS RECOMENDADO           │
+└───────────────────────────────────────────────────────────────────┘
+
+[ ] Voltei para tela inicial do cPanel
+[ ] Procurei "SSL/TLS Status" em Segurança
+[ ] Cliquei em "Run AutoSSL" para meu domínio
+[ ] Aguardei ativação (5min a 2h)
+[ ] Testei: https://meudominio.com.br (com S)
+[ ] Editei .htaccess para forçar HTTPS
+[ ] Site agora redireciona para HTTPS automaticamente 🔒
+
+
+╔═══════════════════════════════════════════════════════════════════╗
+║                                                                   ║
+║   🎉 PARABÉNS! SEU SITE ESTÁ NO AR!                              ║
+║                                                                   ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+
+═══════════════════════════════════════════════════════════════════
+❌ SE ALGO DEU ERRADO
+═══════════════════════════════════════════════════════════════════
+
+Página em Branco:
+→ Verificar se index.html está em public_html (não em subpasta)
+→ Limpar cache do navegador (Ctrl+Shift+Delete)
+
+Erro 404:
+→ Verificar se arquivo se chama exatamente "index.html"
+
+Erro 403:
+→ Configurar permissões: 644 para arquivos, 755 para pastas
+
+Erro 500:
+→ Problema no .htaccess, renomear para .htaccess_old e testar
+
+CSS/JS não carrega:
+→ Verificar se pasta "assets" está em public_html
+→ Verificar permissões da pasta assets
+
+═══════════════════════════════════════════════════════════════════
+📞 PRECISA DE AJUDA?
+═══════════════════════════════════════════════════════════════════
+
+Suporte HostGator:
+☎️  0800 591 2600
+💬 Chat: https://www.hostgator.com.br/suporte
+⏰ 24 horas, 7 dias por semana
+
+═══════════════════════════════════════════════════════════════════
+
+📍 Grupo Espírita Sementes de Humildade
+   Rua Goiás, 253 - Nova Aldeinha
+   Barueri - SP, CEP 06440-170
+   🌱 Acolhimento, simplicidade e espiritualidade
+
+═══════════════════════════════════════════════════════════════════

@@ -1,0 +1,99 @@
+═══════════════════════════════════════════════════════════════════════════════
+  INSTRUÇÕES PARA CORRIGIR O App.tsx NO SEU COMPUTADOR
+═══════════════════════════════════════════════════════════════════════════════
+
+PROBLEMA IDENTIFICADO:
+O arquivo App.tsx no seu computador ainda contém importações "figma:asset" que 
+não funcionam fora do ambiente Figma Make. Por isso o comando "npm run build" 
+está falhando.
+
+═══════════════════════════════════════════════════════════════════════════════
+  SOLUÇÃO RÁPIDA (RECOMENDADO)
+═══════════════════════════════════════════════════════════════════════════════
+
+OPÇÃO 1: Baixar o código atualizado do Figma Make
+-------------------------------------------------
+1. No Figma Make, clique no botão de DOWNLOAD/EXPORTAR do projeto
+2. Extraia o arquivo ZIP baixado
+3. Copie APENAS o arquivo App.tsx da pasta baixada
+4. Cole substituindo o App.tsx no seu projeto local em:
+   C:\Users\umora\Downloads\Site-2026.03.31\Designdesiteinstitucional-main\src\app\
+
+
+═══════════════════════════════════════════════════════════════════════════════
+  SOLUÇÃO ALTERNATIVA (BUSCAR E SUBSTITUIR)
+═══════════════════════════════════════════════════════════════════════════════
+
+OPÇÃO 2: Limpar manualmente as importações
+-------------------------------------------
+
+1. Abra o arquivo no VS Code:
+   C:\Users\umora\Downloads\Site-2026.03.31\Designdesiteinstitucional-main\src\app\App.tsx
+
+2. Pressione Ctrl+H (Buscar e Substituir)
+
+3. Configure o seguinte:
+   - Marque a opção "Use Regular Expression" (ícone .*)
+   - Na caixa "Buscar", cole: import.*figma:asset.*
+   - Na caixa "Substituir", deixe VAZIO
+   - Clique em "Substituir Tudo"
+
+4. Pressione Ctrl+F (Buscar)
+   - Busque por: figma:asset
+   - Se encontrar alguma linha, APAGUE ela completamente
+
+5. Busque também por importações com "/" no início:
+   - Busque por: from "/
+   - Se encontrar, APAGUE essas linhas
+
+6. Salve o arquivo (Ctrl+S)
+
+
+═══════════════════════════════════════════════════════════════════════════════
+  VERIFICAÇÃO
+═══════════════════════════════════════════════════════════════════════════════
+
+O INÍCIO do arquivo App.tsx deve estar EXATAMENTE assim:
+
+import { MapPin, Calendar, Youtube, BookOpen, Heart, Users, GraduationCap, Video, Clock, MessageCircle, Mail, HandHeart, ShoppingBasket, Recycle, PawPrint, ChevronDown, ChevronUp, Sparkles } from "lucide-react";
+import { Header } from "./components/Header";
+import { ImageWithFallback } from "./components/figma/ImageWithFallback";
+import { useState } from "react";
+
+// Imagens locais da pasta public/images/
+const heroImage = "/images/hero-caminho-luz.png";
+const canalYoutubeImage = "/images/canal-youtube.png";
+const livroEspiritosImage = "/images/livro-espiritos.png";
+const palestrasImage = "/images/palestras.png";
+const fachadaImage = "/images/fachada.png";
+
+
+═══════════════════════════════════════════════════════════════════════════════
+  PRÓXIMO PASSO
+═══════════════════════════════════════════════════════════════════════════════
+
+Após corrigir o App.tsx, execute novamente:
+
+npm run build
+
+Se ainda der erro, me envie a mensagem de erro completa.
+
+
+═══════════════════════════════════════════════════════════════════════════════
+  CHECKLIST DE IMAGENS
+═══════════════════════════════════════════════════════════════════════════════
+
+Verifique se você tem as 5 imagens na pasta correta:
+
+C:\Users\umora\Downloads\Site-2026.03.31\Designdesiteinstitucional-main\public\images\
+
+✓ livro-espiritos.png
+✓ palestras.png
+✓ canal-youtube.png
+✓ hero-caminho-luz.png
+✓ fachada.png (ou fachada.jpg)
+
+
+═══════════════════════════════════════════════════════════════════════════════
+FIM DO DOCUMENTO
+═══════════════════════════════════════════════════════════════════════════════

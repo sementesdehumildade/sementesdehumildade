@@ -1,0 +1,253 @@
+═══════════════════════════════════════════════════════════════════════
+  🔧 RESOLVER PROBLEMA: "npm install" NÃO FUNCIONA
+═══════════════════════════════════════════════════════════════════════
+
+🎯 DIAGNÓSTICO: Qual é o seu problema?
+
+Marque com X qual erro você está vendo:
+
+[ ] Erro 1: "'npm' não é reconhecido como comando interno ou externo"
+[ ] Erro 2: "EACCES: permission denied" ou "access denied"
+[ ] Erro 3: "ETIMEDOUT" ou "network timeout" ou erro de rede
+[ ] Erro 4: "Maximum call stack size exceeded"
+[ ] Erro 5: "Unexpected end of JSON input"
+[ ] Erro 6: Outro erro (anotar qual)
+
+═══════════════════════════════════════════════════════════════════════
+
+✅ SOLUÇÃO ERRO 1: "'npm' não é reconhecido"
+
+Este é o erro MAIS COMUM. Significa que o Node.js não está instalado
+ou o Windows não consegue encontrá-lo.
+
+PASSO A PASSO:
+
+1️⃣ VERIFICAR SE NODE ESTÁ INSTALADO
+   
+   a) Pressionar: Win + R
+   b) Digitar: cmd
+   c) Pressionar: Enter
+   d) Digitar: node --version
+   e) Pressionar: Enter
+   
+   O que apareceu?
+   
+   [ ] Apareceu algo como "v18.0.0" ou "v20.0.0"
+       → Node ESTÁ instalado, vá para o passo 2️⃣
+   
+   [ ] Apareceu "'node' não é reconhecido"
+       → Node NÃO está instalado, vá para o passo 3️⃣
+
+2️⃣ SE NODE ESTÁ INSTALADO mas npm não funciona:
+   
+   a) REINICIAR O COMPUTADOR (sério, isso resolve 90% dos casos!)
+   
+   b) Depois de reiniciar, abrir CMD novamente e testar:
+      npm --version
+   
+   c) Se ainda não funcionar:
+      → Desinstalar Node.js:
+        * Painel de Controle
+        * Programas e Recursos
+        * Procurar "Node.js"
+        * Desinstalar
+      
+      → Reiniciar computador
+      
+      → Instalar novamente (passo 3️⃣)
+
+3️⃣ INSTALAR NODE.JS CORRETAMENTE
+   
+   a) Abrir navegador
+   
+   b) Acessar: https://nodejs.org/pt-br
+   
+   c) Clicar no botão verde GRANDE: "Baixar Node.js (LTS)"
+   
+   d) Aguardar o download (arquivo .msi, cerca de 30 MB)
+   
+   e) Localizar o arquivo baixado (geralmente em "Downloads")
+   
+   f) DUPLO CLIQUE no arquivo .msi
+   
+   g) Na instalação:
+      → Clicar "Next"
+      → Aceitar licença → "Next"
+      → Deixar pasta padrão → "Next"
+      → ⚠️ IMPORTANTE: Marcar "Automatically install the necessary tools"
+      → "Next"
+      → "Install"
+      → Aguardar (2-3 minutos)
+      → "Finish"
+   
+   h) ⚠️ OBRIGATÓRIO: REINICIAR O COMPUTADOR
+   
+   i) Após reiniciar:
+      → Abrir CMD novamente
+      → Digitar: node --version
+      → Deve aparecer a versão ✅
+      → Digitar: npm --version
+      → Deve aparecer a versão ✅
+
+═══════════════════════════════════════════════════════════════════════
+
+✅ SOLUÇÃO ERRO 2: "EACCES: permission denied"
+
+Problema de permissão no Windows.
+
+SOLUÇÃO RÁPIDA:
+
+1. Fechar o Prompt de Comando
+
+2. Abrir como Administrador:
+   → Clicar no botão Iniciar
+   → Digitar: cmd
+   → Clicar com BOTÃO DIREITO em "Prompt de Comando"
+   → Escolher "Executar como Administrador"
+   → Clicar "Sim" na janela de confirmação
+
+3. Navegar até a pasta do projeto:
+   cd C:\caminho\para\sua\pasta
+
+4. Tentar novamente:
+   npm install
+
+═══════════════════════════════════════════════════════════════════════
+
+✅ SOLUÇÃO ERRO 3: "ETIMEDOUT" ou erro de rede
+
+Problema de conexão com internet ou firewall.
+
+TENTE NA ORDEM:
+
+1️⃣ Verificar conexão de internet
+   → Abrir navegador
+   → Acessar: https://www.google.com
+   → Se não carregar, problema é na internet
+
+2️⃣ Desativar temporariamente o antivírus
+   → Clicar com botão direito no ícone do antivírus (área de notificação)
+   → "Desativar proteção" por 10 minutos
+   → Tentar npm install novamente
+   → Reativar antivírus depois
+
+3️⃣ Desativar temporariamente o Firewall do Windows
+   → Painel de Controle
+   → Sistema e Segurança
+   → Firewall do Windows Defender
+   → "Ativar ou desativar o Firewall do Windows Defender"
+   → Desativar (temporariamente!)
+   → Tentar npm install
+   → Reativar depois
+
+4️⃣ Tentar usar outro registro npm
+   npm config set registry https://registry.npmjs.org/
+   npm install
+
+═══════════════════════════════════════════════════════════════════════
+
+✅ SOLUÇÃO ERRO 4: "Maximum call stack size exceeded"
+
+Memória/cache corrompido.
+
+SOLUÇÃO:
+
+1. Deletar pasta "node_modules" (se existir)
+   → Na pasta do projeto
+   → Clicar com botão direito em "node_modules"
+   → Deletar
+
+2. Deletar arquivo "package-lock.json" (se existir)
+   → Deletar também
+
+3. Limpar cache do npm:
+   npm cache clean --force
+
+4. Tentar novamente:
+   npm install
+
+═══════════════════════════════════════════════════════════════════════
+
+✅ SOLUÇÃO ERRO 5: "Unexpected end of JSON input"
+
+Arquivo package.json corrompido ou download interrompido.
+
+SOLUÇÃO:
+
+1. Limpar cache:
+   npm cache clean --force
+
+2. Deletar "node_modules" e "package-lock.json"
+
+3. Tentar novamente:
+   npm install
+
+4. Se não funcionar:
+   → Verificar se arquivo "package.json" não está vazio
+   → Abrir com Bloco de Notas
+   → Deve ter conteúdo JSON válido
+
+═══════════════════════════════════════════════════════════════════════
+
+🆘 AINDA NÃO FUNCIONOU?
+
+ALTERNATIVA: Usar YARN (outro gerenciador de pacotes)
+
+1. Instalar Yarn:
+   npm install -g yarn
+
+2. Na pasta do projeto:
+   yarn install
+
+3. Para rodar:
+   yarn dev
+
+4. Para build:
+   yarn build
+
+═══════════════════════════════════════════════════════════════════════
+
+📋 CHECKLIST DE VERIFICAÇÃO
+
+Antes de pedir ajuda, verificar:
+
+[ ] Node.js está instalado (node --version funciona)
+[ ] npm está instalado (npm --version funciona)
+[ ] Estou na pasta CORRETA do projeto (onde está package.json)
+[ ] Tenho conexão com internet funcionando
+[ ] Antivírus não está bloqueando
+[ ] Já tentei reiniciar o computador
+[ ] Já tentei executar CMD como Administrador
+
+═══════════════════════════════════════════════════════════════════════
+
+💬 COMO PEDIR AJUDA
+
+Se nada funcionou, anote:
+
+1. Qual Windows você usa? (Windows 10, 11, etc)
+
+2. Qual comando você digitou exatamente?
+
+3. Qual foi o ERRO COMPLETO que apareceu?
+   (Copiar TODA a mensagem de erro)
+
+4. Resultado de:
+   node --version
+   npm --version
+
+5. Você consegue acessar: https://registry.npmjs.org/ no navegador?
+
+Com essas informações, será mais fácil te ajudar!
+
+═══════════════════════════════════════════════════════════════════════
+
+🎓 GLOSSÁRIO
+
+npm = Node Package Manager (gerenciador de pacotes)
+Node.js = Ambiente para rodar JavaScript no computador
+CMD = Prompt de Comando do Windows
+package.json = Arquivo com lista de dependências do projeto
+node_modules = Pasta onde ficam as dependências instaladas
+
+═══════════════════════════════════════════════════════════════════════
