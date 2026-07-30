@@ -25,6 +25,9 @@ jobs:
       - name: Build de produção
         run: npm run build
 
+      - name: Criar default.html (cópia do index.html)
+        run: cp ./dist/index.html ./dist/default.html
+
       - name: Deploy via FTP para HostGator
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
@@ -37,5 +40,4 @@ jobs:
           server-dir: /
           dry-run: false
           log-level: verbose
-          exclude: ""
           dangerous-clean-slate: true
