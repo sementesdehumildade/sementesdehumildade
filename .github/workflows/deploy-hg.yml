@@ -37,3 +37,5 @@ jobs:
           server-dir: /
           dry-run: false
           log-level: verbose
+          exclude: ""
+          dangerous-clean-slate: true
