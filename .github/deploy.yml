@@ -1,0 +1,47 @@
+Set-Content -Path ".github/workflows/deploy.yml" -Value @"
+name: Deploy Site Sementes de Humildade
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js v20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Executar Build de Produção
+        run: npm run build
+
+      - name: Upload de Artefato (dist)
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-pages
+          path: ./dist
+
+      - name: Deploy para GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          force_orphan: true
+          commit_message: "deploy: atualização automática via GitHub Actions [skip ci]"
+"@
