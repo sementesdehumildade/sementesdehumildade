@@ -114,22 +114,22 @@ export default function App() {
               {/* Título chamativo */}
               <p className="font-['Montserrat'] font-black text-2xl sm:text-3xl md:text-4xl uppercase leading-tight mb-2"
                 style={{ color: "#1B5E20", textShadow: "0 1px 8px rgba(76,175,80,0.18)", letterSpacing: "0.04em" }}>
-                Curso de Mediunidade
+                Escolha o nome de nossa mascote.
               </p>
               {/* Infos em linha única, quebra no mobile */}
               <p className="font-['Inter'] text-[#424242] text-sm sm:text-base font-medium mb-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-0.5">
-                <span>Sem pré-requisitos · Gratuito · Presencial</span>
-                <span className="text-[#A5D6A7] hidden sm:inline">|</span>
-                <span>Sextas-feiras, 20h · Início em 28 de agosto</span>
+                <span>Tem uma sementinha nova na nossa casa</span>
+                <span className="text-[#A5D6A7] hidden sm:inline">—</span>
+                <span>  e ela ainda não tem nome!</span>
               </p>
               {/* CTA */}
               <a
-                href="https://api.whatsapp.com/send?phone=+5511945412285&text=Oi,%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20Curso%20de%20Mediunidade"
+                href="https://forms.cloud.microsoft/r/vP1aSreyNs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#4CAF50] hover:bg-[#2E7D32] text-white font-['Inter'] font-semibold text-sm sm:text-base px-6 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105"
               >
-                👉 Clique aqui para mais informações via WhatsApp
+                👉 Clique e nos ajude a escolher um nome
               </a>
             </div>
           </div>
