@@ -107,32 +107,31 @@ export default function App() {
         <div className="text-center max-w-4xl mx-auto relative z-10">
 
           {/* Callout Curso de Mediunidade */}
-          <div className="relative w-full rounded-2xl overflow-hidden mb-8">
-            <div className="absolute inset-0 bg-white/55 backdrop-blur-md border border-white/70 shadow-xl rounded-2xl" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#4CAF50]/15 via-transparent to-[#A5D6A7]/15 rounded-2xl" />
-            <div className="relative z-10 py-5 px-5 sm:px-8">
-              {/* Título chamativo */}
-              <p className="font-['Montserrat'] font-black text-2xl sm:text-3xl md:text-4xl uppercase leading-tight mb-2"
-                style={{ color: "#1B5E20", textShadow: "0 1px 8px rgba(76,175,80,0.18)", letterSpacing: "0.04em" }}>
-                Escolha o nome de nossa mascote.
-              </p>
-              {/* Infos em linha única, quebra no mobile */}
-              <p className="font-['Inter'] text-[#424242] text-sm sm:text-base font-medium mb-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-0.5">
-                <span>Tem uma sementinha nova na nossa casa</span>
-                <span className="text-[#A5D6A7] hidden sm:inline">—</span>
-                <span>  e ela ainda não tem nome!</span>
-              </p>
-              {/* CTA */}
-              <a
-                href="https://forms.cloud.microsoft/r/vP1aSreyNs"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#4CAF50] hover:bg-[#2E7D32] text-white font-['Inter'] font-semibold text-sm sm:text-base px-6 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105"
-              >
-                👉 Clique e nos ajude a escolher um nome
-              </a>
-            </div>
-          </div>
+          {/* Callout Psicografia e Passe de Cura */}
+<div className="relative w-full rounded-2xl overflow-hidden mb-8">
+  <div className="absolute inset-0 bg-white/55 backdrop-blur-md border border-white/70 shadow-xl rounded-2xl" />
+  <div className="absolute inset-0 bg-gradient-to-r from-[#4CAF50]/15 via-transparent to-[#A5D6A7]/15 rounded-2xl" />
+  <div className="relative z-10 py-5 px-5 sm:px-8">
+    {/* Título chamativo */}
+    <p className="font-['Montserrat'] font-black text-2xl sm:text-3xl md:text-4xl uppercase leading-tight mb-2"
+      style={{ color: "#1B5E20", textShadow: "0 1px 8px rgba(76,175,80,0.18)", letterSpacing: "0.04em" }}>
+      Psicografia e Passe de Cura 28/11 17h
+    </p>
+    {/* Subtítulo */}
+    <p className="font-['Inter'] text-[#424242] text-sm sm:text-base font-medium mb-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-0.5">
+      <span>Entre em nosso grupo de WhatsApp para mais detalhes.</span>
+    </p>
+    {/* CTA */}
+    <a
+      href="https://chat.whatsapp.com/LJqBjAV64xxH2DubmueiF8"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 bg-[#4CAF50] hover:bg-[#2E7D32] text-white font-['Inter'] font-semibold text-sm sm:text-base px-6 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105"
+    >
+      Clique aqui para entrar no Grupo de WhatsApp
+    </a>
+  </div>
+</div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-['Montserrat'] text-[#212121] mb-6 leading-tight">
             Grupo Espírita Sementes de Humildade
